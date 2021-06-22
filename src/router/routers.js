@@ -59,6 +59,35 @@ export default [
     }
   },
   {
+    path: '/test-exec',
+    name: 'test-exec',
+    meta: {
+      icon: 'md-cog',
+      title: '测试执行管理'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'test-proj',
+        name: 'test-proj',
+        meta: {
+          icon: 'md-clipboard',
+          title: '测试项目管理'
+        },
+        component: () => import('@/view/test-exec/test-proj.vue')
+      },
+      {
+        path: 'test-task',
+        name: 'test-task',
+        meta: {
+          icon: 'md-trending-up',
+          title: '测试任务管理'
+        },
+        component: () => import('@/view/test-exec/test-task.vue')
+      }
+    ]
+  },
+  {
     path: '/multilevel',
     name: 'multilevel',
     meta: {
@@ -109,6 +138,7 @@ export default [
       }
     ]
   },
+
   {
     path: '/401',
     name: 'error_401',
