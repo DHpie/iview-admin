@@ -4,8 +4,9 @@ const Random = Mock.Random
 
 export const getTableData = req => {
   let tableData = []
-  doCustomTimes(5, () => {
+  doCustomTimes(10, () => {
     tableData.push(Mock.mock({
+      // id: Random.increment(1),
       name: '@name',
       email: '@email',
       createTime: '@date'
