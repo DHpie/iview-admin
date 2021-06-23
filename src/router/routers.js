@@ -68,22 +68,22 @@ export default [
     component: Main,
     children: [
       {
-        path: 'test-proj',
-        name: 'test-proj',
+        path: 'testProj',
+        name: 'testProj',
         meta: {
           icon: 'md-clipboard',
           title: '测试项目管理'
         },
-        component: () => import('@/view/test-exec/test-proj.vue')
+        component: () => import('@/view/test-exec/testProj.vue')
       },
       {
-        path: 'test-task',
-        name: 'test-task',
+        path: 'testTask',
+        name: 'testTask',
         meta: {
           icon: 'md-trending-up',
           title: '测试任务管理'
         },
-        component: () => import('@/view/test-exec/test-task.vue')
+        component: () => import('@/view/test-exec/testTask.vue')
       }
     ]
   },
