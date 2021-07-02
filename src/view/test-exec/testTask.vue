@@ -12,7 +12,13 @@
       </div>
       <Table :data="tableData1" :columns="tableColumns1" stripe>
         <template slot-scope="{ row }" slot="name">
-          <a href="javascript:;"  @click="()=>{ this.$router.push({name: 'testProj'})}"> {{ row.name }} </a>
+          <router-link :to="{name: 'editProj', params: {item: row.name }}">{{ row.name }}</router-link>
+        </template>
+        <!--   以路由的形式，跳转到对应页面      -->
+        <template slot-scope="{ row, index }" slot="action">
+          <router-link :to="{ name: 'editProj', params: {item: row.name } }">
+            <Button type="info">编辑</Button>
+          </router-link>
         </template>
       </Table>
       <div style="margin: 10px;overflow: hidden">
@@ -21,6 +27,7 @@
         </div>
       </div>
     </Card>
+
   </div>
 </template>
 <script>
@@ -29,6 +36,7 @@ export default {
   name: 'testTask',
   data () {
     return {
+      showPage: true,
       tableData1: this.mockTableData1(),
       tableColumns1: [
         {
@@ -118,6 +126,10 @@ export default {
           render: (h, params) => {
             return h('div', this.formatDate(this.tableData1[params.index].update))
           }
+        },
+        {
+          title: 'Action',
+          slot: 'action'
         }
       ]
     }

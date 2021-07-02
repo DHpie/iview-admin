@@ -84,7 +84,19 @@ export default [
           title: '测试任务管理'
         },
         component: () => import('@/view/test-exec/testTask.vue')
+      },
+      {
+        path: 'editProj/:item',
+        name: 'editProj',
+        meta: {
+          icon: 'md-trending-up',
+          hideInMenu: true,
+          title: '编辑任务'
+        },
+        component: () => import('@/view/test-exec/ci-branch-app-config/editProj.vue'),
+        props: true
       }
+
     ]
   },
   {
